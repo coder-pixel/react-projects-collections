@@ -153,8 +153,9 @@ nav img {
 } */
 .projects_container .project {
     /* background-color: brown; */
-    height: 350px;
+    width: 100%;
     max-width: 500px;
+    height: 350px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -251,5 +252,12 @@ nav img {
         width: 100%;
         height: fit-content;
         border: none;
+    }
+
+    .projects_section .projects_container {
+        padding: 1rem;
+        grid-gap: 2rem 0rem;
+        grid-template-columns: 1fr;
+        /* background-color: #222; */
     }
 }
