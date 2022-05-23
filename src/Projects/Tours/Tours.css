@@ -1,0 +1,124 @@
+.loadingDiv {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loadingDiv h1 {
+    font-size: 3rem;
+    color: crimson;
+}
+
+.tours {
+    /* background-color: aqua; */
+    width: 50%;
+    /* min-width: 700px; */
+    margin: 10vh auto;
+    text-align: center;
+    /* padding: 2rem; */
+}
+.tours .tourHeading {
+    display: inline-block;
+}
+.tourHeading h2 {
+    font-size: 2rem;
+    position: relative;
+}
+.tourHeading h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 3px;
+    background-color: rgb(26, 211, 240);
+}
+
+.tours .refresh {
+    border: none;
+    border-radius: 10px;
+    display: block;
+    margin: 2rem auto;
+    padding: 0.5rem 3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: rgb(26, 211, 240);
+    cursor: pointer;
+}
+
+.tourCard {
+    /* background-color: bisque; */
+    width: 100%;
+    height: auto;
+    margin: 2rem 0;
+    box-shadow: 7px 7px 21px 1px rgba(0, 0, 0, 0.45);
+    -webkit-box-shadow: 7px 7px 21px 1px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 7px 7px 21px 1px rgba(0, 0, 0, 0.45);
+}
+.tourCard .imgDiv {
+    width: 100%;
+    height: 300px;
+}
+.tourCard .textDiv {
+    padding: 2rem;
+    text-align: left;
+}
+.textDiv .headingDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    /* background-color: antiquewhite; */
+}
+.textDiv .headingDiv span{
+    padding: .2rem .8rem;
+    border-radius: 5px;
+    font-weight: 600;
+    color: rgb(19, 164, 231);
+    background-color: rgba(115, 236, 255, 0.55);
+}
+.textDiv p {
+    word-spacing: 2px;
+}
+.textDiv p span {
+    color: rgb(26, 211, 240);
+    font-weight: 600;
+    cursor: pointer;
+}
+.textDiv button {
+    border: 1px solid red;
+    border-radius: 5px;
+    color: red;
+    padding: 0.5rem 3rem;
+    display: block;
+    margin: 1rem auto;
+    background-color: transparent;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 500ms;
+}
+.textDiv button:hover {
+    background-color: red;
+    color: #fff;
+}
+
+
+@media screen and (max-width: 1200px){
+    .tours{
+        width: 70%;
+    }
+}
+@media screen and (max-width: 900px){
+    .tours{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 600px){
+    .tours{
+        width: 90%;
+    }
+}

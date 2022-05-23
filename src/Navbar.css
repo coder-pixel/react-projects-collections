@@ -1,0 +1,31 @@
+
+a{
+    color: inherit;
+}
+
+/* .navbar{
+    width: fit-content;
+    background-color: aqua;
+    display: inline-block;
+} */
+.navbar a {
+    display: inline-block;
+    padding: .2rem 1rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+.navbar a:hover{
+    color: rgb(163, 161, 161);
+}
+.navbar a.active{
+    background-color: aliceblue;
+    color: #333;
+}
+
+
+@media screen and (max-width: 600px){
+    .navbar a{
+        padding: .2rem .5rem;
+        font-size: 1rem;
+    }
+}

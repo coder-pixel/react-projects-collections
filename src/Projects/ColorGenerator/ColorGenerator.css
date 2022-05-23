@@ -1,0 +1,136 @@
+.colorGenerator_container{
+    /* background-color: aqua; */
+    width: 80%;
+    height: auto;
+    padding: 2rem;
+    margin: auto;
+}
+.colorGenerator_container h3{
+    display: block;
+    width: fit-content;
+    font-size: 3rem;
+    text-transform: capitalize;
+    margin: 0 auto 2rem;
+    padding: .2rem 1rem;
+    text-align: center;
+    color: rgb(228, 218, 218);
+    background-color: #333;
+}
+.colorGenerator_container form{
+    /* background-color: aliceblue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.colorGenerator_container .inpSpan{
+    font-weight: 700;
+    /* font-size: 1.2rem; */
+    position: absolute;
+    left: 1%;
+    top: 40%;
+    transform: translateY(-40%) scale(1.4);
+    color: #888;
+}
+.colorGenerator_container form input{
+    font-weight: 600;
+    flex: 1;
+    padding: .6rem 1.5rem;
+    border: 1px solid #999;
+    border-radius: 5px;
+    outline: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    color: #333;
+}
+.colorGenerator_container form input:focus{
+    border: 2px solid #333;
+}
+.colorGenerator_container input.error{
+    border-color: rgb(241, 39, 39);
+}
+
+.colorGenerator_container .inpError{
+    color: rgb(236, 66, 66);
+    font-size: .8rem;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* background-color: #333; */
+    padding: .4rem;
+    margin: auto;
+}
+.colorGenerator_container form .btn{
+    padding: .5rem 2rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+    outline: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: rgb(215, 63, 94);
+    cursor: pointer;
+}
+
+.colorGenerator_colors{
+    /* display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 2rem; */
+    padding: 1rem 5rem;
+    display: grid;
+    grid-gap: .5rem;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+.colorGenerator_colors .singleColor{
+    /* background-color: antiquewhite; */
+    width: 100%;
+    height: 200px;
+    /* border: 1px solid #333; */
+    padding: 2rem;
+    color: #333;
+    cursor: pointer;
+    border: 1px solid#fff;
+    opacity: .8;
+    transition: 500ms;
+}
+.colorGenerator_colors .singleColor:hover{
+    border-color: #333;
+    border-width: 2px;
+    transform: scale(1.05);
+    opacity: 1;
+    z-index: 999;
+
+}
+.singleColor.color_light{
+    color: antiquewhite;
+}
+
+.singleColor .singleColor_values{
+    /* background-color: #999; */
+    height: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: inherit;
+}
+.singleColor p{
+    font-weight: 700;
+}
+
+.singleColor .alert{
+    display: inline-block;
+    margin-top: 10%;
+    font-size: .8rem;
+    padding: .2rem;
+    border-radius: 4px;
+    color: #fff;
+    background-color: rgb(248, 24, 24);
+}
+
+/* @media screen and (max-width: 900px) {
+    
+} */

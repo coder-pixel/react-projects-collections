@@ -1,0 +1,132 @@
+.pagination {
+    /* background-color: bisque; */
+    width: 90%;
+    max-width: 1200px;
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pagination_title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0 0 4rem;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+}
+.pagination_title::after {
+    content: "";
+    width: 90%;
+    height: 2px;
+    background-color: #333;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+}
+.pagination > h5{
+    margin-right: auto;
+    margin-left: 2rem;
+    font-size: 1rem;
+    text-align: start;
+    color: #333;
+    /* background-color: antiquewhite; */
+}
+.pagination > h5 span{
+    font-size: 1.2rem;
+    color: rgb(41, 191, 255);
+}
+.pagination .pagination_container {
+    width: 100%;
+    display: grid;
+    grid-gap: 2rem;
+    /* justify-content: space-evenly;
+    flex-wrap: wrap; */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* background-color: aqua; */
+}
+.pagination_container .singleProfile {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    max-width: 350px;
+    height: 250px;
+    margin: 1rem auto;
+    border-radius: 20px;
+}
+
+.singleProfile {
+    padding: 2rem;
+    box-shadow: 4px 4px 22px -4px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 4px 4px 22px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 4px 4px 22px -4px rgba(0, 0, 0, 0.75);
+}
+.singleProfile .singleProfile_img {
+    width: 100px;
+    height: 100px;
+    /* background-color: blanchedalmond; */
+    margin: 0 auto 2rem;
+}
+.singleProfile .singleProfile_img img {
+    border-radius: 50%;
+}
+
+.singleProfile .singleProfile_text {
+    /* background-color: aliceblue; */
+    text-align: center;
+}
+.singleProfile .singleProfile_text h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+.singleProfile .singleProfile_text button {
+    border: 1px solid transparent;
+    outline: none;
+    border-radius: 50px;
+    background-color: rgb(15, 158, 219);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.singleProfile .singleProfile_text button:active {
+    color: rgb(15, 158, 219);
+    background-color: #fff;
+    border-color: rgb(15, 158, 219);
+}
+
+
+.pageNumbers{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 0 0;
+}
+.pageNumbers li{
+    padding: .4rem .8rem;
+    background-color: rgb(41, 191, 255);
+    color: #fff;
+    margin: .5rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+.pageNumbers li.active{
+    background-color: rgb(15, 85, 126)
+}
+.pageNumbers button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: rgb(15, 85, 126);
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0 .5rem;
+    cursor: pointer;
+}

@@ -1,0 +1,191 @@
+.shoppingBud{
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    max-width: 400px;
+    margin: 4rem auto;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+.shoppingBud .shoppingBud_msg{
+    min-height: 30px;
+    line-height: 30px;
+    display: block;
+    margin: auto;
+    text-align: center;
+    color: rgb(22, 22, 22);
+    font-weight: 500;
+    background-color: rgba(29, 249, 102, 0.5);
+    font-size: .8rem;
+    letter-spacing: 1px;
+    visibility: hidden;
+    margin-bottom: .5rem;
+}
+.shoppingBud .shoppingBud_msg.error{
+    background-color: rgba(248, 69, 69, 0.5);
+}
+.shoppingBud .shoppingBud_msg.show{
+    visibility: visible;
+}
+
+.shoppingBud h3{
+    width: fit-content;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0 auto 2rem;
+    letter-spacing: 1px;
+    position: relative;
+    color: rgb(76, 76, 76);
+}
+.shoppingBud h3::after{
+    content: "";
+    width: 80%;
+    height: 4px;
+    background-color: #a5d5f8;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.shoppingBud form{
+    display: flex;
+    margin-bottom: 2rem;
+}
+.shoppingBud form input{
+    width: 100%;
+    padding: .4rem 1rem;
+    border: none;
+    outline: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: sans-serif;
+    color: #617d98;
+    background-color: #f1f5f8;
+}
+.shoppingBud form input::placeholder{
+    color: #617d98;
+}
+.shoppingBud form input:focus{
+    border: 2px solid #333;
+}
+.shoppingBud form button {
+    padding: .5rem 2rem;
+    border: none;
+    outline: none;
+    background-color: #a5d5f8;
+    color: #555;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+}
+.shoppingBud form button:hover{
+    color: #fff;
+    background-color: #49a6e9;
+    /* border-color: rgb(29, 156, 236); */
+}
+.shoppingBud form button:active{
+    background-color: #fff;
+    color: #49a6e9;
+    border-color: rgb(29, 156, 236);
+}
+
+.shoppingBud .shoppingList{
+    background-color: aliceblue;
+    min-height: 200px;
+    padding: 0 1rem 2rem;
+    position: relative;
+}
+.shoppingList .emptyItemsList{
+    width: 100%;
+    min-height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.shoppingList .clearListDiv{
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    background-color: rgb(255, 35, 35, .8);
+    padding: .2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+}  
+.shoppingList .clearListDiv:hover{
+    background-color: rgb(255, 35, 35);
+} 
+
+.singleItem{
+    width: 100%;
+    height: auto;
+    /* background-color: rgb(205, 205, 205); */
+    margin-bottom: .5rem;
+    padding: .5rem;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    text-transform: capitalize;
+    position: relative;
+}
+.singleItem::after{
+    content: "";
+    width: 90%;
+    height: 1px;
+    background-color: #ddd;
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+}
+.highlighted_singleItem{
+    background-color: rgba(29, 249, 102, 0.5);
+    border-radius: 10px;
+}
+.singleItem .singleItem_btnGrp{
+    width: 30px;
+    /* background-color: pink; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.singleItem .singleItem_btnGrp button{
+    /* padding: .2rem .3rem; */
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: .8rem;
+}
+.singleItem_btnGrp .singleItem_btnGrp_edit{
+    color: rgba(29, 249, 102);
+}
+.singleItem_btnGrp .singleItem_btnGrp_del{
+    color: rgba(248, 69, 69);
+}
+
+
+@media screen and (max-width: 480px) {
+    .shoppingBud{
+        width: 100%;
+        padding: .5rem;
+    }
+
+    .shoppingBud form button{
+        padding: .5rem .8rem;
+    }
+}
