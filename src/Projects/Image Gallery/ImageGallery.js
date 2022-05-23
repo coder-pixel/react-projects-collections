@@ -10,6 +10,8 @@ const clientID = `?client_id=FeVwiHaZsbzMTgIhrU8VbpLddhcMFkqswVytzN-6SEM`;
 const ImageGallery = () => {
 
     const [query, setQuery] = useState("")
+    const [queryRes, setQueryRes] = useState(false)
+    
     const [loading, setLoading] = useState(false)
     const [photos, setPhotos] = useState([])
     const [page, setPage] = useState(1)
@@ -41,6 +43,7 @@ const ImageGallery = () => {
             console.log(data)
             setPhotos((oldPhotos) => {
                 if (query && page === 1) {
+                    setQueryRes(true)
                     return data.results;
                 }
                 else if (query) {
@@ -52,6 +55,7 @@ const ImageGallery = () => {
             });
             setNewImages(false);
             setLoading(false);
+            setQueryRes(false)
         } catch (err) {
             console.log(err)
             setNewImages(false);
@@ -120,6 +124,8 @@ const ImageGallery = () => {
 
 
             <div className="gallery">
+                {/* {query && queryRes && <h2 style={{textAlign: "center", fontSize: "2rem"}}>Nothing found</h2>} */}
+                {!photos.length > 0 && <h2 style={{textAlign: "center", fontSize: "2rem"}}>Nothing found</h2>}
                 {photos.map((photo, index) => <SingleImage key={index} photo={photo} showModal={showModal} modalImageSrc={modalImageSrc} setShowModal={setShowModal} setModalImageSrc={setModalImageSrc} />)}
             </div>
 

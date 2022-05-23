@@ -11,7 +11,7 @@
 }
 
 .reducerCart .cart_header{
-    /* background-color: aquamarine; */
+    background-color: aquamarine;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -211,6 +211,10 @@
 
 
 @media screen and (max-width:600px){
+    .reducerCart .cart_header p{
+        right: 5%;
+    }
+    
     .cart_content{
         padding: 0 1rem;
     }
