@@ -14,12 +14,19 @@ const ColorGenerator = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // console.log("hello")
-        if(/[#]/.test(color)) return setInpError("Pls remove '#' and  try again!")
-        if (color.length !== 3 && color.length !== 6){
+        let tempColor;
+        if(/[#]/.test(color)) {
+            tempColor = color.split("").splice(1).join("")
+        }else{
+            tempColor = color
+        }
+        setColor(tempColor)
+        if (/[#]/.test(tempColor)) return setInpError("Pls remove '#' and  try again!")
+        if (tempColor.length !== 3 && tempColor.length !== 6) {
             return setInpError("Char length should be 3 or 6 digits!")
         }
         try {
-            const colors = new Values("#" + color).all(10)
+            const colors = new Values("#" + tempColor).all(10)
             console.log(colors)
             setList(colors)
             setInpError("")
@@ -35,7 +42,7 @@ const ColorGenerator = () => {
 
     return (
         <>
-            <div className="colorGenerator_bg" style={{backgroundColor: colorBg}}>
+            <div className="colorGenerator_bg" style={{ backgroundColor: colorBg }}>
                 <section className="colorGenerator_container">
                     <h3>color generator</h3>
                     <form onSubmit={handleSubmit}>
@@ -45,13 +52,13 @@ const ColorGenerator = () => {
                             onChange={(e) => {
                                 // console.log(/[#]/.test(color))
                                 // console.log(e.target.value.split("").splice(1).join(""))
-                                let res;
-                                if(/[#]/.test(color)) {
-                                    res = e.target.value.split("").splice(1).join("")
-                                }else{
-                                    res = e.target.value
-                                }
-                                setColor(res)
+                                // let res;
+                                // if(/[#]/.test(color)) {
+                                //     res = e.target.value.split("").splice(1).join("")
+                                // }else{
+                                //     res = e.target.value
+                                // }
+                                setColor(e.target.value)
                             }}
                             // onPaste={(e) => {
                             //     console.log("paste method")
