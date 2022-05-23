@@ -14,6 +14,7 @@ const ColorGenerator = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // console.log("hello")
+        if(/[#]/.test(color)) return setInpError("Pls remove '#' and  try again!")
         if (color.length !== 3 && color.length !== 6){
             return setInpError("Char length should be 3 or 6 digits!")
         }
@@ -50,19 +51,19 @@ const ColorGenerator = () => {
                                 }else{
                                     res = e.target.value
                                 }
-                                setColor(e.target.value)
-                            }}
-                            onPaste={(e) => {
-                                console.log("paste method")
-                                console.log(e)
-                                let res;
-                                if(/[#]/.test(e.target.value)) {
-                                    res = e.target.value.split("").splice(1).join("")
-                                }else{
-                                    res = e.target.value
-                                }
                                 setColor(res)
                             }}
+                            // onPaste={(e) => {
+                            //     console.log("paste method")
+                            //     console.log(e)
+                            //     let res;
+                            //     if(/[#]/.test(e.target.value)) {
+                            //         res = e.target.value.split("").splice(1).join("")
+                            //     }else{
+                            //         res = e.target.value
+                            //     }
+                            //     setColor(res)
+                            // }}
                             className={`${error ? "error" : null}`}
                         />
                         <span className='inpSpan'>#</span>
