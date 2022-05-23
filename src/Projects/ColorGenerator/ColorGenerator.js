@@ -14,7 +14,9 @@ const ColorGenerator = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // console.log("hello")
-        if (color.length !== 3 || color.length !== 6) setInpError("Char length should be 6 digits!")
+        if (color.length !== 3 && color.length !== 6){
+            return setInpError("Char length should be 3 or 6 digits!")
+        }
         try {
             const colors = new Values("#" + color).all(10)
             console.log(colors)
@@ -39,7 +41,28 @@ const ColorGenerator = () => {
                         <input
                             type="text"
                             value={color}
-                            onChange={(e) => setColor(e.target.value)}
+                            onChange={(e) => {
+                                // console.log(/[#]/.test(color))
+                                // console.log(e.target.value.split("").splice(1).join(""))
+                                let res;
+                                if(/[#]/.test(color)) {
+                                    res = e.target.value.split("").splice(1).join("")
+                                }else{
+                                    res = e.target.value
+                                }
+                                setColor(e.target.value)
+                            }}
+                            onPaste={(e) => {
+                                console.log("paste method")
+                                console.log(e)
+                                let res;
+                                if(/[#]/.test(e.target.value)) {
+                                    res = e.target.value.split("").splice(1).join("")
+                                }else{
+                                    res = e.target.value
+                                }
+                                setColor(res)
+                            }}
                             className={`${error ? "error" : null}`}
                         />
                         <span className='inpSpan'>#</span>
